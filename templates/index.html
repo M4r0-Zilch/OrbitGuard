@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <!-- ZONE 1: Header -->
+    <header class="tactical-header">
+        <h2>Near-Earth Telemetry Matrix</h2>
+        <p>Live data feed from NASA NeoWs</p>
+    </header>
+
+    <!-- ZONE 2: KPI Metrics Grid -->
+    <section class="kpi-grid">
+        <div class="kpi-card">
+            <h3>Targets Tracked</h3>
+            <p class="kpi-value">{{ total_count }}</p> 
+        </div>
+        <div class="kpi-card">
+            <h3>Max Threat</h3>
+            <p class="kpi-value">{{ highest_threat }}</p> 
+        </div>
+        <div class="kpi-card">
+            <h3>Closest distance</h3>
+            <p class="kpi-value">{{ closest_distance }}</p> 
+        </div>
+        <div class="kpi-card">
+            <h3>Hazardous count</h3>
+            <p class="kpi-value">{{ hazardous }}</p> 
+        </div>
+        
+    </section>
+    <!-- ZONE 3: The Data Table -->
+    <section class="table-card">
+        <h3>Live Target Roster</h3>
+        <table class="tactical-table">
+            <thead>
+                <tr>
+                    <th>Designation</th>
+                    <th>Threat Score</th>
+                    <th>Distance (km)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JINJA LOOP: This creates a row for every asteroid -->
+                {% for asteroid in asteroids %}
+                <tr>
+                    <td>{{ asteroid.name }}</td>
+                    <td>{{ asteroid.threat_score }}</td>
+                    <td>{{ asteroid.miss_distance }}</td>
+                    <td>
+                        <!-- Storing Python data inside HTML data-* attributes -->
+                        <form action = "/pin" method = "post">
+                            <input type="hidden" name = "asteroid_id" value="{{ asteroid.id }}">
+                            <input type="hidden" name = "threat_score" value="{{ asteroid.threat_score }}">
+                            <input type="hidden" name = "miss_distance" value="{{ asteroid.miss_distance }}">
+                            <input type="hidden" name = "asteroid_name" value="{{ asteroid.name }}">
+                            <button class="pin-btn" 
+                                    data-id="{{ asteroid.id }}"
+                                    data-name="{{ asteroid.name }}">
+                                PIN TARGET
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+{% endblock %}
