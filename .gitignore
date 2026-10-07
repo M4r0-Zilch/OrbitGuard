@@ -5,7 +5,7 @@ ENV/
 __pycache__/
 *.py[cod]
 *$py.class
-.env
+*.env
 .env.local
 .env.*.local
 .idea/
