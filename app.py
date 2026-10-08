@@ -37,7 +37,7 @@ def index():
             })
             total_count += 1
             if float(item['close_approach_data'][0]['miss_distance']['kilometers']) < closest_distance:
-                closest_distance = float(item['close_approach_data'][0]['miss_distance']['kilometers'])
+                closest_distance = round(float(item['close_approach_data'][0]['miss_distance']['kilometers']), 4)
             if item['is_potentially_hazardous_asteroid']:
                 hazardous += 1
     else:
