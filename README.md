@@ -15,7 +15,8 @@ The NASA NeoWs API provides the web app with raw data about asteroid names, thei
 Using a custom mathematical formula, OrbitGuard calculates a normalized "Threat Score" to determine how dangerous an asteroid is relative to the others. The threat score is scaled strictly between 0.0 and 100.0.
 
 The purely mathematical version of the algorithm is:
-\[
+
+$$
 \operatorname{round}_1\!\Bigl(
   \min\bigl(
     1000 \cdot \frac{d_{\max} \, v}{m}
@@ -23,7 +24,8 @@ The purely mathematical version of the algorithm is:
     \; 100
   \bigr)
 \Bigr)
-\]
+$$
+
 
 Where:
 * **$d_{\max}$**: Maximum estimated diameter (meters)
