@@ -58,3 +58,8 @@ This project was built as my Final Project for Harvard's CS50x.
 It was truly my honor to learn from this course, words alone can't describe how happy I feel after finishing it. Thanks for everything!
 
 ### This was CS50!
+
+
+## License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
