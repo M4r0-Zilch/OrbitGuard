@@ -52,16 +52,16 @@ def pin():
     asteroid_id   = request.form.get("asteroid_id")
     threat        = request.form.get("threat_score")
     miss_distance = request.form.get("miss_distance")
-    db.execute("INSERT INTO pinned_targets (asteroid_id, name, threat_score, miss_distance) VALUES (?, ?, ?, ?)", asteroid_id, name, threat, miss_distance)
+    db.execute("INSERT OR IGNORE INTO pinned_targets (asteroid_id, name, threat_score, miss_distance) VALUES (?, ?, ?, ?)", asteroid_id, name, threat, miss_distance)
     return redirect("/")
 
-@app.route("/watchlist")
+@app.route("/watchlist", methods = ['POST', 'GET'])
 def watchlist():
     pinned = db.execute("SELECT * FROM pinned_targets")
     return render_template("watchlist.html", pinned = pinned)
 
-@app.route("/unpin")
+@app.route("/unpin", methods = ['GET', 'POST'])
 def unpin():
     asteroid_id = request.form.get("asteroid_id")
-    db.execute("DELETE * FROM pinned_targets WHERE asteroid_id = ?", asteroid_id)
+    db.execute("DELETE FROM pinned_targets WHERE asteroid_id = ?", asteroid_id)
     return redirect("/watchlist")

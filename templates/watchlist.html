@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
     <section class="table-card">
+        {% if pinned %}
         <table class="tactical-table">
             <thead>
                 <tr>
@@ -22,7 +22,7 @@
                     <td>
                         <!-- Storing Python data inside HTML data-* attributes -->
                         <form action = "/unpin" method = "post">
-                            <input type="hidden" name = "asteroid_id" value="{{ asteroid.id }}">
+                            <input type="hidden" name = "asteroid_id" value="{{ asteroid.asteroid_id }}">
                             <button class="pin-btn" 
                                     data-id="{{ asteroid.id }}"
                                     data-name="{{ asteroid.name }}">
@@ -34,6 +34,12 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% else %}
+        <h4>
+            Nothing is pinned!
+        </h4>
+        {% endif %}
     </section>
+    
 
 {% endblock %}

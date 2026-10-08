@@ -1,0 +1,57 @@
+:root {
+            --bg-dark: #070A11;         
+            --panel-bg: #0F172A;        
+            --panel-border: #1E293B;    
+            --accent-cyan: #00F0FF;     
+            --accent-magenta: #FF0055;  
+            --text-bright: #F8FAFC;     
+            --text-muted: #64748B;      
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-bright);
+            font-family: 'Share Tech Mono', monospace; 
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, .nav-brand {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .navbar {
+            background-color: var(--panel-bg);
+            border-bottom: 1px solid var(--accent-cyan);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+        }
+        .nav-brand {
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+        .nav-links a {
+            color: var(--text-bright);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+        .dashboard-wrapper {
+            max-width: 1400px; 
+            margin: 2rem auto; 
+            padding: 0 2rem;
+        }
