@@ -1,8 +1,5 @@
 # OrbitGuard
 
-I used Gemini assistant to help me write this README.md because I am not good at writing.
-
-#### Video Demo:  <[URL HERE]>
 #### Description:
 
 OrbitGuard is a lightweight, minimal Flask web application designed for viewing near-Earth asteroids and their telemetry data. Instead of relying on static or hardcoded information, OrbitGuard fetches real-time orbital data directly from NASA's NeoWs (Near Earth Object Web Service) REST API. It also includes an interactive matrix powered by Chart.js displaying threat levels across tracked targets.
@@ -57,9 +54,7 @@ Where:
 
 ### Acknowledgments & Academic Honesty
 
-This project was built as my Final Project for Harvard's CS50x. The core Python backend logic, API integration, SQLite database architecture, and custom threat-scoring algorithms are my original work. I utilized Google's Gemini AI as a coding tutor to assist with generating the HTML/CSS boilerplate, troubleshooting layout issues, and learning modern CSS Grid & styling techniques for the frontend user interface. The product is originally my work, Gemini was used to help me and NOT do it for me. Gemini assistant did help me as well with implementing chart.html and script.js for the chart route.
-
-
+This project was built as my Final Project for Harvard's CS50x.
 It was truly my honor to learn from this course, words alone can't describe how happy I feel after finishing it. Thanks for everything!
 
 ### This was CS50!
