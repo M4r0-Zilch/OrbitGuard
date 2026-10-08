@@ -17,7 +17,7 @@ Using a custom mathematical formula, OrbitGuard calculates a normalized "Threat 
 The purely mathematical version of the algorithm is:
 
 $$
-\operatorname{round}_1\!\Bigl(
+\text{round}_1\!\Bigl(
   \min\bigl(
     1000 \cdot \frac{d_{\max} \, v}{m}
     + 15 \cdot \mathbf{1}_{\{\text{hazardous}\}},
@@ -25,6 +25,7 @@ $$
   \bigr)
 \Bigr)
 $$
+
 
 
 Where:
