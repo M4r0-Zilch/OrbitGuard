@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+    
+<section class="table-card" style="margin-bottom: 2rem;">
+    <h3>Threat Level Visual Matrix</h3>
+    <canvas id="threatChart" style="max-height: 280px;"></canvas>
+</section>
+<script>
+        const ASTEROID_DATA = {{ asteroids | tojson | safe }};
+</script>
+<script src = "{{ url_for('static', filename = 'script.js') }}">
+</script>
+
+{% endblock body %}
+    
